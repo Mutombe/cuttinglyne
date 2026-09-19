@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cutting Lyne — Global Freight Forwarding &amp; Logistics</title>
+<meta name="description" content="Cutting Lyne moves cargo by sea, air and road across 120+ countries. Freight forwarding, customs clearance, bonded warehousing and real-time shipment visibility.">
+<meta name="theme-color" content="#0C2114">
+<link rel="icon" href="assets/img/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+
+<!-- ============ SVG sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mark" viewBox="0 0 100 100">
+      <path d="M0 0h100v23H23v77H0z" fill="var(--mark-a,#245633)"/>
+      <path d="M78 29h22v71H29V77h49z" fill="var(--mark-b,#0B0F0C)"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.5" r="2.8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 18.5c1.4 0 1.4 1.3 2.8 1.3s1.4-1.3 2.8-1.3 1.4 1.3 2.8 1.3 1.4-1.3 2.8-1.3 1.4 1.3 2.8 1.3 1.4-1.3 2.8-1.3"/><path d="M4 16 3 11h18l-2.5 5"/><path d="M7 11V7h10v4M12 3v4"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 3.5a1.8 1.8 0 0 1 3.6 0l.4 6 6.6 3.8v2.3l-6.8-2-.4 4 2.3 1.8v1.6l-3.9-1.2-3.9 1.2v-1.6l2.3-1.8-.4-4-6.8 2v-2.3l6.6-3.8z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h11v10H2zM13 10h4.2l2.8 3.3v3.2h-7z"/><circle cx="6.5" cy="18.2" r="1.8"/><circle cx="17" cy="18.2" r="1.8"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.2v7.6a1.8 1.8 0 0 1-.9 1.5l-7.2 4a1.8 1.8 0 0 1-1.8 0l-7.2-4a1.8 1.8 0 0 1-.9-1.5V8.2a1.8 1.8 0 0 1 .9-1.5l7.2-4a1.8 1.8 0 0 1 1.8 0l7.2 4a1.8 1.8 0 0 1 .9 1.5z"/><path d="m3.3 7.2 8.7 5 8.7-5M12 21.5v-9.3"/></symbol>
+    <symbol id="i-warehouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 20.5V8.4L12 4l9.5 4.4v12.1"/><path d="M6.8 20.5v-7h10.4v7M6.8 17h10.4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 6v6c0 4.5 3.1 8.2 7.5 9.3 4.4-1.1 7.5-4.8 7.5-9.3V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.5z"/><path d="M14 2.5v5h5M8.5 13h7M8.5 17h5"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4"/><path d="M17 7a7 7 0 0 1 0 10M7 17A7 7 0 0 1 7 7M20.5 3.5a12 12 0 0 1 0 17M3.5 20.5a12 12 0 0 1 0-17"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3L7.3 14 2.6 9.4l6.5-.9z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.9c0-.8.2-1.2 1.4-1.2H17V2.8h-2.6c-3.1 0-4.2 1.5-4.2 4v1.7H8V11h2.2v10H14V11h2.5l.4-2.5z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.5L21.6 21h-6l-4.7-6.1L5.4 21h-3l7-8L2.1 3h6.2l4.3 5.6zm-1.1 16.1h1.7L7.7 4.8H5.9z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 21H3.4V9.1h3.5zM5.1 7.5a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM21 21h-3.5v-5.8c0-1.4 0-3.2-1.9-3.2s-2.2 1.5-2.2 3.1V21H9.9V9.1h3.3v1.6h.1a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ Top bar ============ -->
+<div class="topbar">
+  <div class="shell topbar__in">
+    <ul class="topbar__list">
+      <li><svg><use href="#i-pin"></use></svg> Unit 14, Harbour Gate, Durban 4001</li>
+      <li class="topbar__hide"><svg><use href="#i-clock"></use></svg> Control tower live 24 / 7 / 365</li>
+    </ul>
+    <ul class="topbar__list">
+      <li><svg><use href="#i-phone"></use></svg> <a href="tel:+27315550188">+27 31 555 0188</a></li>
+      <li class="topbar__hide"><svg><use href="#i-mail"></use></svg> <a href="mailto:move@cuttinglyne.com">move@cuttinglyne.com</a></li>
+      <li class="topbar__socials">
+        <a href="#" aria-label="Facebook"><svg><use href="#i-fb"></use></svg></a>
+        <a href="#" aria-label="X"><svg><use href="#i-x"></use></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg><use href="#i-in"></use></svg></a>
+        <a href="#" aria-label="Instagram"><svg><use href="#i-ig"></use></svg></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ Hero ============ -->
+<header class="hero" id="hero">
+
+  <div class="nav-wrap">
+    <div class="hero-shell">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand brand--light nav__logo" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 100 100"><use href="#i-mark"></use></svg>
+          <span class="brand__word">Cutting Lyne<small>Global Logistics</small></span>
+        </a>
+
+        <div class="nav__menu">
+          <div class="nav__item"><a class="nav__link" href="index.html">Home</a></div>
+          <div class="nav__item"><a class="nav__link" href="about.html">About</a></div>
+          <div class="nav__item">
+            <a class="nav__link" href="services.html">Services <svg><use href="#i-chev"></use></svg></a>
+            <div class="nav__drop">
+              <a href="service-sea-freight.html">Sea Freight</a>
+              <a href="services.html#air">Air Freight</a>
+              <a href="services.html#road">Road Haulage</a>
+              <a href="services.html#warehouse">Warehousing</a>
+              <a href="services.html#customs">Customs Clearance</a>
+              <a href="services.html#project">Project Cargo</a>
+            </div>
+          </div>
+          <div class="nav__item"><a class="nav__link" href="tracking.html">Tracking</a></div>
+          <div class="nav__item"><a class="nav__link" href="about.html#network">Network</a></div>
+          <div class="nav__item"><a class="nav__link" href="contact.html">Contact</a></div>
+        </div>
+
+        <div class="nav__tools">
+          <button class="nav__search" aria-label="Search"><svg><use href="#i-search"></use></svg></button>
+          <a class="btn btn--white nav__cta" href="contact.html">Get a Quote
+            <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+          <button class="burger" data-drawer-open aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero__frame">
+    <div class="hero__media">
+      <img data-slide src="assets/img/port-cranes-dusk.jpg" alt="Gantry cranes loading a container vessel at dusk" style="opacity:1">
+      <img data-slide src="assets/img/ship-ocean.jpg" alt="Container ship at sea" style="position:absolute;inset:0;opacity:0">
+      <img data-slide src="assets/img/truck-container.jpg" alt="Reach stacker loading a container onto a trailer" style="position:absolute;inset:0;opacity:0">
+    </div>
+
+    <div class="hero__dots" role="tablist" aria-label="Hero slides">
+      <button data-dot class="is-on" aria-label="Slide 1"></button>
+      <button data-dot aria-label="Slide 2"></button>
+      <button data-dot aria-label="Slide 3"></button>
+    </div>
+
+    <div class="hero__body hero-shell">
+      <div>
+        <span class="tag"><i></i> Sea · Air · Road · Warehousing</span>
+        <h1 class="display hero__title">
+          <span class="ln">Cutting through</span>
+          <span class="ln">the <span class="hl">complexity</span> of freight.</span>
+        </h1>
+      </div>
+      <div class="hero__aside">
+        <p>We plan, book, clear and deliver your cargo across 120+ countries — with one coordinator, one contract and one live view of every milestone.</p>
+        <a class="btn btn--glass" href="services.html">Our Services
+          <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+      </div>
+    </div>
+
+    <div class="hero__rail hero-shell">
+      <div><b><span data-count="24" data-suffix="K+">24K+</span></b><span>Shipments cleared</span></div>
+      <div><b><span data-count="120" data-suffix="+">120+</span></b><span>Countries served</span></div>
+      <div><b><span data-count="99.2" data-suffix="%">99.2%</span></b><span>On-time delivery</span></div>
+      <div><b><span data-count="18" data-suffix=" yrs">18 yrs</span></b><span>Moving cargo</span></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ Partners ============ -->
+<section class="partners bg-mist" aria-label="Trusted by">
+  <div class="partners__track">
+    <div style="display:flex;gap:clamp(44px,6vw,86px);align-items:center;padding-right:clamp(44px,6vw,86px)">
+      <span class="partners__item"><svg><use href="#i-globe"></use></svg> Meridian</span>
+      <span class="partners__item"><svg><use href="#i-ship"></use></svg> Coastline</span>
+      <span class="partners__item"><svg><use href="#i-box"></use></svg> Nordpack</span>
+      <span class="partners__item"><svg><use href="#i-plane"></use></svg> AeroLink</span>
+      <span class="partners__item"><svg><use href="#i-truck"></use></svg> Haulmark</span>
+      <span class="partners__item"><svg><use href="#i-warehouse"></use></svg> Stockyard</span>
+      <span class="partners__item"><svg><use href="#i-shield"></use></svg> Vantage</span>
+    </div>
+    <div style="display:flex;gap:clamp(44px,6vw,86px);align-items:center;padding-right:clamp(44px,6vw,86px)" aria-hidden="true">
+      <span class="partners__item"><svg><use href="#i-globe"></use></svg> Meridian</span>
+      <span class="partners__item"><svg><use href="#i-ship"></use></svg> Coastline</span>
+      <span class="partners__item"><svg><use href="#i-box"></use></svg> Nordpack</span>
+      <span class="partners__item"><svg><use href="#i-plane"></use></svg> AeroLink</span>
+      <span class="partners__item"><svg><use href="#i-truck"></use></svg> Haulmark</span>
+      <span class="partners__item"><svg><use href="#i-warehouse"></use></svg> Stockyard</span>
+      <span class="partners__item"><svg><use href="#i-shield"></use></svg> Vantage</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Statement ============ -->
+<section class="section bg-mist">
+  <div class="shell statement-row">
+    <span class="eyebrow rv">Our Experience</span>
+    <p class="statement rv">We are a one-stop logistics partner built to get your cargo to its exact destination, on the day you promised it — <em>without delay, damage or surprise cost.</em></p>
+  </div>
+</section>
+
+<!-- ============ About split ============ -->
+<section class="section--tight bg-mist">
+  <div class="shell split">
+    <div class="split__shot rv">
+      <img src="assets/img/warehouse-tablet.jpg" alt="Warehouse supervisor checking stock on a tablet">
+    </div>
+
+    <div class="statcard rv">
+      <h3 class="h3">Moving freight for<br>industry leaders</h3>
+      <svg class="statcard__rings" viewBox="0 0 280 280" aria-hidden="true">
+        <circle cx="140" cy="140" r="30"/><circle cx="140" cy="140" r="52"/>
+        <circle cx="140" cy="140" r="74"/><circle cx="140" cy="140" r="96"/>
+        <circle cx="140" cy="140" r="118"/><circle cx="140" cy="140" r="138"/>
+      </svg>
+      <div class="statcard__big"><span data-count="2450" data-suffix="+">2450+</span></div>
+      <p>Containers moved every month across our network</p>
+    </div>
+
+    <div class="stack rv" style="--s:22px;align-self:center">
+      <p class="lead">Cutting Lyne began as a two-desk customs brokerage on the Durban waterfront. Eighteen years later we route cargo through 40 ports and 12 air gateways — and we still answer the phone the same way.</p>
+      <ul class="checks">
+        <li><svg><use href="#i-check"></use></svg> One named coordinator owns your file end to end</li>
+        <li><svg><use href="#i-check"></use></svg> Customs, duty and compliance handled in-house</li>
+        <li><svg><use href="#i-check"></use></svg> Milestone alerts before you have to ask for them</li>
+      </ul>
+      <a class="btn btn--ghost" href="about.html">Know About Us
+        <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Marquee band ============ -->
+<section class="band" aria-hidden="true">
+  <div class="band__track">
+    <div class="band__set">
+      <span class="band__word">Freight Forwarding</span>
+      <span class="band__dot"><svg><use href="#i-arrow"></use></svg></span>
+      <span class="band__word band__word--fill">Customs Cleared</span>
+      <span class="band__dot"><svg><use href="#i-arrow"></use></svg></span>
+    </div>
+    <div class="band__set">
+      <span class="band__word">Freight Forwarding</span>
+      <span class="band__dot"><svg><use href="#i-arrow"></use></svg></span>
+      <span class="band__word band__word--fill">Customs Cleared</span>
+      <span class="band__dot"><svg><use href="#i-arrow"></use></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Dark feature panel ============ -->
+<section class="section--tight bg-mist">
+  <div class="shell-wide">
+    <div class="panel" data-fscroll>
+      <div class="panel__watermark" aria-hidden="true"><img src="assets/img/containers-stack.jpg" alt=""></div>
+
+      <div class="shead">
+        <div class="shead__t rv">
+          <span class="eyebrow eyebrow--light">What we run</span>
+          <h2 class="h2">Essential features<br>of our services.</h2>
+        </div>
+        <div class="shead__x rv" style="justify-items:end">
+          <p class="lead">Every mode, every document, every milestone — managed from one control tower so nothing falls between carriers.</p>
+          <div class="flex-row">
+            <button class="iconbtn iconbtn--onDark" data-fscroll-prev aria-label="Previous"><svg><use href="#i-arrow-l"></use></svg></button>
+            <button class="iconbtn iconbtn--onDark" data-fscroll-next aria-label="Next"><svg><use href="#i-arrow-r"></use></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fcards" data-fscroll-vp>
+        <article class="fcard rv">
+          <div class="fcard__top"><h3>Bonded Warehousing</h3>
+            <span class="fcard__ico"><svg><use href="#i-warehouse"></use></svg></span></div>
+          <hr>
+          <p>SARS-bonded floor space where duty is deferred until your stock actually sells.</p>
+          <div class="fcard__shot"><img src="assets/img/warehouse-bay.jpg" alt="Loading bays inside a distribution centre"></div>
+        </article>
+
+        <article class="fcard rv">
+          <div class="fcard__top"><h3>Real-Time Tracking</h3>
+            <span class="fcard__ico"><svg><use href="#i-radar"></use></svg></span></div>
+          <hr>
+          <p>Carrier feeds, port calls and gate-outs pushed to one timeline you can share.</p>
+          <div class="fcard__shot"><img src="assets/img/docks-aerial.jpg" alt="Aerial view of loading docks"></div>
+        </article>
+
+        <article class="fcard rv">
+          <div class="fcard__top"><h3>Distribution Centres</h3>
+            <span class="fcard__ico"><svg><use href="#i-pin"></use></svg></span></div>
+          <hr>
+          <p>Cross-dock and pick-pack hubs positioned next to the corridors you actually use.</p>
+          <div class="fcard__shot"><img src="assets/img/warehouse-worker.jpg" alt="Warehouse team member reviewing inventory"></div>
+        </article>
+
+        <article class="fcard rv">
+          <div class="fcard__top"><h3>Cargo Assurance</h3>
+            <span class="fcard__ico"><svg><use href="#i-shield"></use></svg></span></div>
+          <hr>
+          <p>All-risk cover arranged at booking, with claims handled by our own team.</p>
+          <div class="fcard__shot"><img src="assets/img/cargo-strap.jpg" alt="Cargo secured with ratchet straps"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Services ============ -->
+<section class="section bg-mist" id="services">
+  <div class="shell">
+    <div class="shead">
+      <div class="shead__t rv">
+        <span class="eyebrow">What we move</span>
+        <h2 class="h2">Six services.<br>One accountable partner.</h2>
+      </div>
+      <div class="shead__x rv">
+        <p class="lead">Mix and match modes on a single booking. We quote the whole door-to-door lane, not a leg at a time.</p>
+        <a class="btn btn--ghost" href="services.html">All Services
+          <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+      </div>
+    </div>
+
+    <div class="svc-grid mt-l">
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">01</span>
+          <img src="assets/img/ship-sea.jpg" alt="Container ship under way"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-ship"></use></svg></span>
+          <h3 class="h4">Sea Freight</h3>
+          <p>FCL, LCL and breakbulk on weekly allocations with the lines that actually call your port.</p>
+          <a class="tlink" href="service-sea-freight.html">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">02</span>
+          <img src="assets/img/air-sea.jpg" alt="Air and sea freight converging"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-plane"></use></svg></span>
+          <h3 class="h4">Air Freight</h3>
+          <p>Next-flight-out, consolidations and charter when the ship date has already gone.</p>
+          <a class="tlink" href="services.html#air">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">03</span>
+          <img src="assets/img/truck-container.jpg" alt="Container being loaded onto a trailer"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-truck"></use></svg></span>
+          <h3 class="h4">Road Haulage</h3>
+          <p>Cross-border and domestic linehaul, sidelifters and abnormal loads on tracked fleets.</p>
+          <a class="tlink" href="services.html#road">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">04</span>
+          <img src="assets/img/warehouse-bay.jpg" alt="Distribution centre loading bays"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-warehouse"></use></svg></span>
+          <h3 class="h4">Warehousing</h3>
+          <p>Bonded and general storage, pick-pack, labelling and returns under one WMS.</p>
+          <a class="tlink" href="services.html#warehouse">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">05</span>
+          <img src="assets/img/port-sunset.jpg" alt="Busy port terminal at sunset"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-doc"></use></svg></span>
+          <h3 class="h4">Customs Clearance</h3>
+          <p>Tariff rulings, duty optimisation, refunds and audit-ready records filed in-house.</p>
+          <a class="tlink" href="services.html#customs">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc__shot"><span class="svc__no">06</span>
+          <img src="assets/img/port-aerial.jpg" alt="Aerial view of a container terminal"></div>
+        <div class="svc__body">
+          <span class="svc__ico"><svg><use href="#i-box"></use></svg></span>
+          <h3 class="h4">Project Cargo</h3>
+          <p>Route surveys, permits and lift plans for the pieces that do not fit in a box.</p>
+          <a class="tlink" href="services.html#project">Explore service <svg><use href="#i-arrow"></use></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Tracking ============ -->
+<section class="section bg-white">
+  <div class="shell">
+    <div class="shead shead--center rv">
+      <div class="shead__t" style="justify-items:center">
+        <span class="eyebrow">Live visibility</span>
+        <h2 class="h2">Where is my cargo?</h2>
+        <p class="lead">Drop in a booking or container reference and we will show you the last confirmed scan.</p>
+      </div>
+    </div>
+
+    <div class="track mt-l rv">
+      <div class="track__shot">
+        <img src="assets/img/containers-wall.jpg" alt="Stacked shipping containers">
+        <div class="ov">
+          <span class="eyebrow eyebrow--light">Control tower</span>
+          <p class="h3" style="color:#fff">Every milestone,<br>the moment it happens.</p>
+          <p style="color:rgba(255,255,255,.72);font-size:.9375rem;max-width:34ch">Port calls, gate-outs and customs releases land on one timeline you can forward to your customer.</p>
+        </div>
+      </div>
+
+      <form class="track__form" id="track-form" novalidate>
+        <div class="field">
+          <label for="track-id">Booking / container reference</label>
+          <input id="track-id" name="ref" type="text" placeholder="e.g. CL-4471082 or MSKU7841203" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="track-mode">Mode</label>
+          <select id="track-mode" name="mode">
+            <option>Any mode</option><option>Sea freight</option>
+            <option>Air freight</option><option>Road haulage</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn" type="submit">Track Shipment
+            <span class="ico"><svg><use href="#i-arrow"></use></svg></span></button>
+        </div>
+        <div class="track__result" id="track-out" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Process ============ -->
+<section class="section bg-white">
+  <div class="shell">
+    <div class="shead">
+      <div class="shead__t rv">
+        <span class="eyebrow">How it runs</span>
+        <h2 class="h2">From enquiry<br>to signed POD.</h2>
+      </div>
+      <div class="shead__x rv">
+        <p class="lead">A booking with us follows the same four beats every time, so you always know who is holding the file and what happens next.</p>
+      </div>
+    </div>
+
+    <div class="steps steps--onWhite mt-l">
+      <div class="step rv"><h3 class="h4">Scope &amp; quote</h3>
+        <p>We price the full lane — freight, duty, handling and last mile — in one document with no line left as "TBC".</p></div>
+      <div class="step rv"><h3 class="h4">Book &amp; collect</h3>
+        <p>Space is secured, collection is scheduled and your coordinator confirms the cut-off in writing.</p></div>
+      <div class="step rv"><h3 class="h4">Clear &amp; move</h3>
+        <p>Entries are filed ahead of arrival so the box moves the day it lands instead of sitting on demurrage.</p></div>
+      <div class="step rv"><h3 class="h4">Deliver &amp; report</h3>
+        <p>Proof of delivery, final costing and a lane review land together — usually before you chase for them.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Coverage ============ -->
+<section class="section bg-mist" id="network">
+  <div class="shell cover">
+    <div class="cover__map rv">
+      <img src="assets/img/port-aerial.jpg" alt="Aerial view of a global container terminal">
+      <span class="pin" style="left:22%;top:34%"></span>
+      <span class="pin" style="left:47%;top:52%"></span>
+      <span class="pin" style="left:68%;top:38%"></span>
+      <span class="pin" style="left:79%;top:63%"></span>
+    </div>
+    <div class="stack rv" style="--s:22px">
+      <span class="eyebrow">Our network</span>
+      <h2 class="h2">Deep in the corridors you trade on.</h2>
+      <p class="lead">We are not everywhere. We are properly resourced in the lanes our clients actually run — with our own people, not a forwarding address.</p>
+      <ul class="cover__list">
+        <li><b>Southern Africa</b><span>11 offices · 4 bonded sites</span></li>
+        <li><b>Europe &amp; UK</b><span>Rotterdam · Felixstowe · Hamburg</span></li>
+        <li><b>Far East</b><span>Shanghai · Ningbo · Singapore</span></li>
+        <li><b>Middle East</b><span>Jebel Ali · Dammam</span></li>
+        <li><b>Americas</b><span>Savannah · Santos · Callao</span></li>
+      </ul>
+      <a class="btn btn--ghost" href="contact.html">Talk to a lane specialist
+        <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stats panel ============ -->
+<section class="section--tight bg-mist">
+  <div class="shell-wide">
+    <div class="panel rv">
+      <div class="shead" style="align-items:center">
+        <div class="shead__t">
+          <span class="eyebrow eyebrow--light">By the numbers</span>
+          <h2 class="h2">Performance we<br>publish, not promise.</h2>
+        </div>
+        <div class="shead__x">
+          <p class="lead">Figures below are rolling twelve-month averages across all modes, reported to clients every quarter.</p>
+        </div>
+      </div>
+      <div class="stats stats--light mt-l">
+        <div class="stat"><b><span data-count="24" data-suffix="K+">24K+</span></b><span>Shipments cleared</span></div>
+        <div class="stat"><b><span data-count="99.2" data-suffix="%">99.2%</span></b><span>On-time delivery</span></div>
+        <div class="stat"><b><span data-count="40" data-suffix="+">40+</span></b><span>Ports covered</span></div>
+        <div class="stat"><b><span data-count="4.9" data-suffix="/5">4.9/5</span></b><span>Client satisfaction</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Testimonials ============ -->
+<section class="section bg-mist">
+  <div class="shell quotes" data-quotes>
+    <div class="shead">
+      <div class="shead__t rv">
+        <span class="eyebrow">Client voices</span>
+        <h2 class="h2">The people who<br>sign the invoices.</h2>
+      </div>
+      <div class="shead__x rv">
+        <p class="lead">We are judged on the weeks when something goes wrong. Here is what that looked like for four of our clients.</p>
+        <div class="flex-row">
+          <button class="iconbtn" data-quotes-prev aria-label="Previous testimonial"><svg><use href="#i-arrow-l"></use></svg></button>
+          <button class="iconbtn" data-quotes-next aria-label="Next testimonial"><svg><use href="#i-arrow-r"></use></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="quotes__vp mt-l rv">
+      <div class="quotes__track" data-quotes-track>
+        <div class="quote"><div class="quote__in">
+          <div class="quote__stars" aria-label="5 out of 5">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <blockquote>"A vessel got rolled two days before our launch. Cutting Lyne had 40 pallets on a charter and into the DC without us having to pick up the phone once."</blockquote>
+          <div class="quote__by"><span class="quote__av">NM</span>
+            <div><b>Naledi Mahlangu</b><span>Supply Chain Director, Kalo Retail</span></div></div>
+        </div></div>
+
+        <div class="quote"><div class="quote__in">
+          <div class="quote__stars" aria-label="5 out of 5">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <blockquote>"Their customs team found a tariff ruling our previous broker had missed for four years. The refund paid for the whole year's freight spend."</blockquote>
+          <div class="quote__by"><span class="quote__av">DR</span>
+            <div><b>Dieter Roux</b><span>Finance Lead, Aurum Components</span></div></div>
+        </div></div>
+
+        <div class="quote"><div class="quote__in">
+          <div class="quote__stars" aria-label="5 out of 5">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <blockquote>"One coordinator, one number, one invoice. After three forwarders in five years, that alone was worth the move."</blockquote>
+          <div class="quote__by"><span class="quote__av">AO</span>
+            <div><b>Amara Okafor</b><span>Operations Manager, Tembi Foods</span></div></div>
+        </div></div>
+
+        <div class="quote"><div class="quote__in">
+          <div class="quote__stars" aria-label="5 out of 5">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <blockquote>"They moved a 62-tonne press from Ningbo to a factory floor in Gqeberha. Route survey, permits, lift plan — we signed one contract."</blockquote>
+          <div class="quote__by"><span class="quote__av">SP</span>
+            <div><b>Sergio Pinto</b><span>Plant Engineer, Verndale Industries</span></div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Insights ============ -->
+<section class="section bg-white">
+  <div class="shell">
+    <div class="shead">
+      <div class="shead__t rv">
+        <span class="eyebrow">Insights</span>
+        <h2 class="h2">Notes from<br>the control tower.</h2>
+      </div>
+      <div class="shead__x rv">
+        <p class="lead">Rate movements, regulation changes and the operational detail that decides whether a lane runs clean.</p>
+        <a class="btn btn--ghost" href="#">All articles <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+      </div>
+    </div>
+
+    <div class="posts mt-l">
+      <article class="post rv">
+        <a class="post__shot" href="#"><span class="post__date">12 Sep</span>
+          <img src="assets/img/port-sunset.jpg" alt="Container terminal at sunset"></a>
+        <div class="post__meta">Sea Freight <i></i> 6 min read</div>
+        <h3 class="h4"><a href="#">Why your FCL rate moved 18% and what to do before the next GRI</a></h3>
+        <p class="body-sm">Carriers are re-cutting services faster than contracts can follow. A practical read on locking allocation.</p>
+      </article>
+
+      <article class="post rv">
+        <a class="post__shot" href="#"><span class="post__date">28 Aug</span>
+          <img src="assets/img/warehouse-worker.jpg" alt="Warehouse worker scanning inventory"></a>
+        <div class="post__meta">Warehousing <i></i> 4 min read</div>
+        <h3 class="h4"><a href="#">Bonded storage: the cash-flow lever most importers leave unused</a></h3>
+        <p class="body-sm">Deferring duty until stock sells can free more working capital than renegotiating your freight rate.</p>
+      </article>
+
+      <article class="post rv">
+        <a class="post__shot" href="#"><span class="post__date">09 Aug</span>
+          <img src="assets/img/air-sea.jpg" alt="Aerial view of air and sea freight"></a>
+        <div class="post__meta">Customs <i></i> 5 min read</div>
+        <h3 class="h4"><a href="#">Tariff classification errors: a quiet four-figure leak in most import files</a></h3>
+        <p class="body-sm">What a clean binding ruling looks like, and how far back a refund claim can realistically reach.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section--tight bg-white">
+  <div class="shell-wide">
+    <div class="cta rv">
+      <img src="assets/img/ship-ocean.jpg" alt="">
+      <span class="eyebrow eyebrow--light">Ready when you are</span>
+      <h2 class="h2 mt-s">Send us a lane. We will send back a real number.</h2>
+      <p class="lead mt-s">Origin, destination, commodity and volume is enough. Most quotes land within four working hours.</p>
+      <div class="cta__row">
+        <a class="btn btn--mint" href="contact.html">Request a Quote
+          <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+        <a class="btn btn--onDark" href="tel:+27315550188">+27 31 555 0188
+          <span class="ico"><svg><use href="#i-phone"></use></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div class="foot__about">
+        <a class="brand brand--light" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 100 100"><use href="#i-mark"></use></svg>
+          <span class="brand__word">Cutting Lyne<small>Global Logistics</small></span>
+        </a>
+        <p>Freight forwarding, customs clearance and warehousing for importers and exporters who would rather deal with one accountable partner than five.</p>
+        <form class="foot__news" data-demo-form>
+          <input type="email" placeholder="Your work email" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><svg><use href="#i-arrow"></use></svg></button>
+        </form>
+        <div class="foot__socials">
+          <a href="#" aria-label="Facebook"><svg><use href="#i-fb"></use></svg></a>
+          <a href="#" aria-label="X"><svg><use href="#i-x"></use></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg><use href="#i-in"></use></svg></a>
+          <a href="#" aria-label="Instagram"><svg><use href="#i-ig"></use></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="service-sea-freight.html">Sea Freight</a></li>
+          <li><a href="services.html#air">Air Freight</a></li>
+          <li><a href="services.html#road">Road Haulage</a></li>
+          <li><a href="services.html#warehouse">Warehousing</a></li>
+          <li><a href="services.html#customs">Customs Clearance</a></li>
+          <li><a href="services.html#project">Project Cargo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#network">Our Network</a></li>
+          <li><a href="tracking.html">Track a Shipment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Insights</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot__contact">
+          <li><svg><use href="#i-pin"></use></svg> Unit 14, Harbour Gate<br>Durban 4001, South Africa</li>
+          <li><svg><use href="#i-phone"></use></svg> <a href="tel:+27315550188">+27 31 555 0188</a></li>
+          <li><svg><use href="#i-mail"></use></svg> <a href="mailto:move@cuttinglyne.com">move@cuttinglyne.com</a></li>
+          <li><svg><use href="#i-clock"></use></svg> Control tower live 24 / 7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__bar">
+      <p>&copy; <span data-year>2026</span> Cutting Lyne Logistics. All rights reserved.</p>
+      <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Trading Conditions</a><a href="#">Cookies</a></nav>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top"><svg><use href="#i-arrow-up"></use></svg></button>
+
+<!-- ============ Mobile drawer ============ -->
+<div class="drawer" id="drawer">
+  <div class="drawer__top">
+    <a class="brand brand--light" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 100 100"><use href="#i-mark"></use></svg>
+      <span class="brand__word">Cutting Lyne<small>Global Logistics</small></span>
+    </a>
+    <button class="drawer__close" data-drawer-close aria-label="Close menu"><svg><use href="#i-close"></use></svg></button>
+  </div>
+  <nav class="drawer__nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="tracking.html">Tracking</a>
+    <a href="about.html#network">Network</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <div class="row"><svg><use href="#i-phone"></use></svg> +27 31 555 0188</div>
+    <div class="row"><svg><use href="#i-mail"></use></svg> move@cuttinglyne.com</div>
+    <a class="btn btn--mint" href="contact.html" style="justify-self:start">Get a Quote
+      <span class="ico"><svg><use href="#i-arrow"></use></svg></span></a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

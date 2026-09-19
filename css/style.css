@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Cutting Lyne — Global Logistics
+   Design system
+   Palette sourced from the brand mark: forest #245633 / black,
+   accent mint #6BF09F, on white.
+   ========================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+:root{
+  --ink:#0B0F0C;
+  --ink-70:rgba(11,15,12,.70);
+  --ink-55:rgba(11,15,12,.55);
+  --ink-40:rgba(11,15,12,.40);
+
+  --forest:#245633;
+  --forest-600:#1E492D;
+  --forest-800:#14331E;
+  --forest-900:#0C2114;
+
+  --mint:#6BF09F;
+  --mint-300:#9CF5C0;
+  --mint-100:#DFFBEA;
+
+  --paper:#FFFFFF;
+  --mist:#F1F4F2;
+  --mist-2:#E8EDEA;
+
+  --line:rgba(11,15,12,.10);
+  --line-soft:rgba(11,15,12,.06);
+  --line-dark:rgba(255,255,255,.14);
+
+  --r-xs:10px;
+  --r-sm:16px;
+  --r-md:24px;
+  --r-lg:32px;
+  --r-xl:40px;
+
+  --shell:1440px;
+  --gutter:clamp(18px,3.3vw,44px);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+
+  --shadow-sm:0 2px 10px rgba(11,15,12,.05);
+  --shadow-md:0 18px 40px -22px rgba(11,15,12,.30);
+  --shadow-lg:0 40px 80px -40px rgba(11,15,12,.45);
+
+  --nav-h:76px;
+
+  /* ---- Type scale -------------------------------------------------------
+     Two ratios. Display sizes step by ~1.26 so headlines separate hard;
+     text sizes step by ~1.18 so body and UI stay tight and readable.
+     Body is 17px, not 16 — 16px reads as browser-default. The display:body
+     ratio lands at ~4.6:1, the editorial range; the old scale was 5.6:1,
+     which is what made the small text feel undersized.
+     Tracking scales inversely with size: big type needs it negative, all-caps
+     micro type needs it open. ------------------------------------------- */
+  --fs-micro:.75rem;      /* 12px — eyebrows, nav, field labels   */
+  --fs-2xs:.8125rem;      /* 13px — top bar, breadcrumbs, meta    */
+  --fs-xs:.875rem;        /* 14px — dense UI                      */
+  --fs-sm:.9375rem;       /* 15px — captions, fine print          */
+  --fs-base:1.0625rem;    /* 17px — body                          */
+  --fs-md:1rem;           /* 16px — card body, form controls      */
+  --fs-lg:1.25rem;        /* 20px — lead paragraphs               */
+
+  --fs-h4:clamp(1.1875rem,1.45vw,1.3125rem);  /* 19 → 21 (maxes at 1448px) */
+  --fs-h3:clamp(1.4rem,1.85vw,1.8125rem);     /* 22.4 → 29 */
+  --fs-statement:clamp(1.6rem,2.7vw,2.5rem);  /* 25.6 → 40 */
+  --fs-h2:clamp(1.95rem,3.35vw,3.0625rem);    /* 31.2 → 49 */
+  --fs-h1:clamp(2.35rem,4.5vw,3.875rem);      /* 37.6 → 62 */
+  --fs-display:clamp(2.55rem,5.4vw,4.875rem); /* 40.8 → 78 */
+}
+
+/* ---------- 2. Reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body,h1,h2,h3,h4,h5,p,figure,blockquote,dl,dd{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+img,svg,video{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:4px}
+
+.skip{
+  position:absolute;left:12px;top:-100px;z-index:400;
+  padding:12px 20px;border-radius:999px;background:var(--forest);color:#fff;
+  font-size:.875rem;font-weight:700;transition:top .25s var(--ease);
+}
+.skip:focus{top:12px}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+body{
+  font-family:'Plus Jakarta Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  font-size:var(--fs-base);
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--mist);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ---------- 3. Layout primitives ---------- */
+.shell{width:min(100% - (var(--gutter)*2),var(--shell));margin-inline:auto}
+.shell-wide{width:min(100% - (var(--gutter)*2),1660px);margin-inline:auto}
+.section{padding-block:clamp(64px,7.5vw,120px)}
+.section--tight{padding-block:clamp(48px,5vw,80px)}
+.stack>*+*{margin-top:var(--s,24px)}
+.grid{display:grid;gap:clamp(20px,2.2vw,32px)}
+.only-lg{display:none}
+@media(min-width:1024px){.only-lg{display:block}}
+
+/* ---------- 4. Type ---------- */
+/* Line-height tightens as size grows; tracking opens as size shrinks. */
+h1,h2,h3,h4,.display{font-weight:800;text-wrap:balance}
+
+.display{font-size:var(--fs-display);line-height:.98;letter-spacing:-.042em}
+.h1{font-size:var(--fs-h1);line-height:1;letter-spacing:-.038em}
+.h2{font-size:var(--fs-h2);line-height:1.06;letter-spacing:-.032em}
+.h3{font-size:var(--fs-h3);line-height:1.2;letter-spacing:-.024em}
+.h4{font-size:var(--fs-h4);line-height:1.32;letter-spacing:-.016em;font-weight:700}
+
+.lead{font-size:var(--fs-lg);line-height:1.55;letter-spacing:-.011em;color:var(--ink-70)}
+.body-sm{font-size:var(--fs-sm);line-height:1.66;color:var(--ink-55)}
+.muted{color:var(--ink-55)}
+
+.statement{
+  font-size:var(--fs-statement);
+  font-weight:700;line-height:1.2;letter-spacing:-.028em;
+}
+.statement em{font-style:normal;color:var(--forest)}
+
+/* Eyebrow */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:var(--fs-micro);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--forest);
+}
+.eyebrow::before{
+  content:"";width:7px;height:7px;border-radius:2px;background:var(--mint);
+  box-shadow:0 0 0 3px rgba(107,240,159,.28);
+}
+.eyebrow--light{color:var(--mint)}
+.eyebrow--light::before{background:var(--mint);box-shadow:0 0 0 3px rgba(107,240,159,.20)}
+
+/* Pill tag (hero) */
+.tag{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 18px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  font-size:var(--fs-micro);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;
+}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--mint);flex:none;
+  box-shadow:0 0 0 4px rgba(107,240,159,.25)}
+
+/* ---------- 5. Buttons ---------- */
+.btn{
+  --bg:var(--forest);--fg:#fff;--bd:var(--forest);
+  position:relative;display:inline-flex;align-items:center;gap:14px;
+  padding:7px 7px 7px 26px;border-radius:999px;
+  background:var(--bg);color:var(--fg);border:1px solid var(--bd);
+  font-size:var(--fs-sm);font-weight:700;letter-spacing:-.008em;white-space:nowrap;
+  transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),transform .35s var(--ease);
+}
+.btn .ico{
+  width:40px;height:40px;flex:none;border-radius:50%;
+  display:grid;place-items:center;background:#fff;color:var(--forest);
+  transition:transform .45s var(--ease-out),background .35s var(--ease),color .35s var(--ease);
+}
+.btn .ico svg{width:15px;height:15px}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover .ico{transform:rotate(45deg)}
+
+.btn--mint{--bg:var(--mint);--fg:var(--forest-900);--bd:var(--mint)}
+.btn--mint .ico{background:var(--forest-900);color:var(--mint)}
+.btn--white{--bg:#fff;--fg:var(--ink);--bd:#fff}
+.btn--white .ico{background:var(--forest);color:#fff}
+.btn--ghost{--bg:transparent;--fg:var(--ink);--bd:var(--line)}
+.btn--ghost .ico{background:var(--forest);color:#fff}
+.btn--ghost:hover{--bd:var(--forest)}
+.btn--glass{--bg:rgba(255,255,255,.14);--fg:#fff;--bd:rgba(255,255,255,.30);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn--glass .ico{background:#fff;color:var(--forest)}
+.btn--onDark{--bg:transparent;--fg:#fff;--bd:var(--line-dark)}
+.btn--onDark .ico{background:var(--mint);color:var(--forest-900)}
+.btn--onDark:hover{--bd:var(--mint)}
+.btn--sm{padding:5px 5px 5px 20px;font-size:var(--fs-xs)}
+.btn--sm .ico{width:32px;height:32px}
+.btn--sm .ico svg{width:13px;height:13px}
+
+/* text link with arrow */
+.tlink{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:var(--fs-sm);color:var(--forest)}
+.tlink svg{width:14px;height:14px;transition:transform .4s var(--ease-out)}
+.tlink:hover svg{transform:translate(3px,-3px)}
+
+/* circular icon button */
+.iconbtn{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--ink);background:transparent;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);
+}
+.iconbtn svg{width:16px;height:16px}
+.iconbtn:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+.iconbtn--onDark{border-color:var(--line-dark);color:#fff}
+.iconbtn--onDark:hover{background:var(--mint);border-color:var(--mint);color:var(--forest-900)}
+.iconbtn:disabled{opacity:.35;pointer-events:none}
+
+/* ---------- 6. Brand mark ---------- */
+.brand{display:inline-flex;align-items:center;gap:11px}
+.brand__mark{width:32px;height:32px;flex:none;--mark-a:var(--forest);--mark-b:var(--ink)}
+.brand__word{
+  font-size:1.125rem;font-weight:800;letter-spacing:-.022em;line-height:1;
+  text-transform:uppercase;
+}
+.brand__word small{display:block;font-size:.5625rem;font-weight:700;letter-spacing:.26em;
+  color:var(--ink-40);margin-top:4px}
+.brand--light .brand__mark{--mark-a:var(--mint);--mark-b:#fff}
+.brand--light .brand__word{color:#fff}
+.brand--light .brand__word small{color:rgba(255,255,255,.5)}
