@@ -161,7 +161,15 @@ body.no-scroll{overflow:hidden}
 
 .hero__frame{
   position:relative;overflow:hidden;border-radius:0;
+  /* svh so the frame does not jump when the mobile URL bar hides */
   min-height:min(86vh,830px);
+  min-height:min(86svh,830px);
+  /* Reserve the nav's band plus a deliberate gap. .hero__body is bottom
+     anchored with margin-top:auto, so without this the gap under the nav is
+     just whatever space happens to be left — it went negative (content behind
+     the nav) on short phones. This sets the MINIMUM gap; the auto margin still
+     absorbs any extra room on taller screens. */
+  padding-top:calc(var(--nav-h) + 16px + var(--hero-gap,40px));
   display:flex;flex-direction:column;
   isolation:isolate;background:var(--forest-900);
 }
@@ -209,6 +217,52 @@ body.no-scroll{overflow:hidden}
 @media(min-width:1000px){.hero__dots{display:flex}}
 .hero__dots button{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.35s var(--ease)}
 .hero__dots button.is-on{background:var(--forest);height:22px;border-radius:5px}
+
+/* ---------- Home hero: phone composition ----------
+   The four blocks (tag, headline, support, stat rail) are tightened so the
+   whole hero lands inside a 740px viewport instead of growing past it. */
+@media(max-width:699px){
+  /* The band between nav and content is declared, not left over. It carries
+     the photograph — the hero's best asset — so it scales with the screen and
+     is bounded at both ends instead of being whatever the auto margin leaves. */
+  .hero{--hero-gap:clamp(88px,16svh,150px)}
+  .hero__frame{min-height:min(90svh,760px)}
+  /* Content sits lower and wider on a phone, so the scrim has to come up
+     earlier and harder than the desktop ramp to keep the copy legible over
+     the bright container stacks. */
+  .hero__frame::after{
+    background:linear-gradient(180deg,
+      rgba(5,17,10,.68) 0%,
+      rgba(5,17,10,.10) 24%,
+      rgba(5,17,10,.60) 50%,
+      rgba(5,17,10,.95) 100%);
+  }
+  .hero__body{gap:20px;padding-bottom:24px}
+  .hero__title{margin-top:14px}
+  .hero__aside{gap:18px}
+  .hero__aside p{font-size:var(--fs-md);line-height:1.5;max-width:34ch}
+  .hero__aside .btn{padding-left:24px}
+  .tag{padding:8px 15px;letter-spacing:.12em}
+
+  .hero__rail{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:18px 20px;
+    padding:18px 0 22px;
+  }
+  .hero__rail b{font-size:1.625rem}
+  .hero__rail>div>span{margin-top:5px;letter-spacing:.11em}
+}
+@media(max-width:380px){
+  .hero{--hero-gap:clamp(76px,14svh,110px)}
+  .hero__rail b{font-size:1.5rem}
+  .hero__rail{gap:16px 18px}
+}
+
+/* Tablet / burger-nav range: same bounding, a little more generous. */
+@media(min-width:700px) and (max-width:1139px){
+  .hero{--hero-gap:clamp(120px,18svh,200px)}
+  .hero__frame{min-height:min(78svh,740px)}
+}
 
 /* ---------- Inner page hero ---------- */
 .phero__frame{
